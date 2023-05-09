@@ -14,7 +14,7 @@ class Grade_Calculator:
 
         self.myWindow = Tk()
         self.myWindow.title(TITLE)
-        self.topFrame = Frame(self.myWindow)
+        self.topFrame = Frame(self.myWindow, padx=10, pady=10)
         self.midFrame = Frame(self.myWindow)
         self.midCalcFrame = Frame(self.myWindow)
         self.botFrame = Frame(self.myWindow)
@@ -41,11 +41,11 @@ class Grade_Calculator:
             self.entries.append(entry)
 
             # GRID THE LABEL AND ENTRY IN THE SPECIFIED ROW AND COLUMN.
-            self.labels[i].grid(row=i + 1, padx=10, pady=10)
-            self.entries[i].grid(row=i + 1, column=2, padx=10, pady=10)
+            self.labels[i].grid(row=i + 1, sticky='E')
+            self.entries[i].grid(row=i + 1, column=2, sticky='W')
 
         self.calculateButton = Button(self.midCalcFrame, text="Calculate", command=self.calculate)
-        self.calculateButton.pack(side='left')
+        self.calculateButton.pack(side='left', padx=10, pady=10)
         self.avgResultLabel = Label(self.midCalcFrame, width=8, borderwidth=1, relief="solid")
         self.avgResultLabel.pack(side='left')
 
